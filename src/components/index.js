@@ -1,3 +1,5 @@
 import Game from "./Game";
+import Rules from "./Rules";
+import Header from "./Header";
 
-export {Game};
+export {Game, Rules, Header};

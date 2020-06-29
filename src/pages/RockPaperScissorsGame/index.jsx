@@ -1,36 +1,17 @@
-import React, {Fragment} from "react";
-import {Game} from "../../components";
+import React, {useState} from "react";
+import {Game, Header, Rules} from "../../components";
+import "./index.css";
 
 function RockPaperScissorsGame({}) {
+    const [score, setScore] = useState(0);
 
     return (
-        <Fragment>
-            <Head />
+        <div className="container">
+            <Header score={score}/>
             <Game />
             <Rules />
-        </Fragment>
+        </div>
     );
 }
 
 export default RockPaperScissorsGame;
-
-function Head({}) {
-    return (
-        <article className="">
-            <header>
-                <h1>ROCK PAPER SCISSORS</h1>
-            </header>
-            <div className="score">
-
-            </div>
-        </article>
-    );
-}
-
-function Rules({}) {
-    return (
-        <section className="rules">
-
-        </section>
-    );
-}

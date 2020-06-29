@@ -1,0 +1,36 @@
+.header {
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2.2rem;
+    padding: 2rem 1rem;
+}
+
+.header__title {
+    color: white;
+    width: 100px;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.headerScore {
+    align-items: center;
+    background-color: white;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 2rem;
+}
+
+.headerScore__title {
+    color: hsl(229, 64%, 46%);
+    font-size: 1.2rem;
+}
+
+.headerScore__score {
+    font-size: 4rem;
+}
