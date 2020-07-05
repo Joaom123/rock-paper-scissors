@@ -3,8 +3,8 @@
     background-repeat: no-repeat;
     background-size: 180px;
     background-position: center;
-    width: 28rem;
-    height: 25rem;
+    width: 30rem;
+    height: 30rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -14,33 +14,32 @@
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    height: 10rem;
-    width: 10rem;
+    height: 12rem;
+    width: 12rem;
 }
 
 .game__hand--rock {
     background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    margin-left: 86px;
+    margin-left: calc((100% - 100px)/2);
 }
 
 .game__hand--paper {
     background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    margin-left: 15px;
 }
 
 .game__hand--scissors {
     background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 .game__handIcon {
     align-items: center;
     background: white;
     border-radius: 50%;
-    box-shadow: inset 0 4px 1px #9c9c9c8a;
+    box-shadow: inset 0 4px 1px rgba(156, 156, 156, 0.54);
     display: flex;
     justify-content: center;
-    height: 48px;
+    height: 60px;
     padding: 1.6rem;
-    width: 48px;
+    width: 60px;
 }
