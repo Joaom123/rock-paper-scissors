@@ -22,8 +22,17 @@ function Hand({type}) {
     return(
         <div className={`game__hand game__hand--${type}`}>
             <div className={`game__handIcon game__handIcon--${type}`}>
-                <IconRock />
+                <Icon type={type} />
             </div>
         </div>
     );
+}
+
+function Icon({type}) {
+    if(type === "rock")
+        return <IconRock />;
+    if(type === "scissors")
+        return <IconScissors />;
+    if(type === "paper")
+        return <IconPaper />
 }
