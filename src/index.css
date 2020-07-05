@@ -5,7 +5,7 @@ html {
 
 @font-face {
   font-family: "Barlow Semi Condensed";
-  src: local("Barlow Semi Condesed"),
+  src: local("Barlow Semi Condensed"),
     url("./assets/fonts/BarlowSemiCondensed-Bold.ttf") format("truetype"),
     url("./assets/fonts/BarlowSemiCondensed-SemiBold.ttf") format("truetype");
 }

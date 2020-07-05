@@ -1,22 +1,29 @@
 import React from "react";
 import "./index.css";
-import {BgTriangle, IconRock} from "../../assets";
-import svg from "../../assets/img/bg-triangle.svg";
+import {IconRock, IconPaper, IconScissors} from "../../assets";
+import bgTriangle from "../../assets/img/bg-triangle.svg";
 
 function Game({}) {
     return (
-        <section className="game" style={{backgroundImage: `url(${svg})`}}>
-            <Icon />
+        <section
+            className="game"
+            style={{backgroundImage: `url(${bgTriangle})`}}
+        >
+            <Hand type="paper" />
+            <Hand type="scissors" />
+            <Hand type="rock" />
         </section>
     );
 }
 
 export default Game;
 
-function Icon() {
+function Hand({type}) {
     return(
-        <span>
-            <IconRock />
-        </span>
+        <div className={`game__hand game__hand--${type}`}>
+            <div className={`game__handIcon game__handIcon--${type}`}>
+                <IconRock />
+            </div>
+        </div>
     );
 }

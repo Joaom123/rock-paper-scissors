@@ -6,6 +6,7 @@
     width: 100%;
     margin-top: 2.2rem;
     padding: 0 1rem;
+    max-width: 50rem;
 }
 
 .header__title {
