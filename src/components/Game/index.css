@@ -34,9 +34,10 @@
 }
 
 .game__handIcon {
-    background: white;
     align-items: center;
+    background: white;
     border-radius: 50%;
+    box-shadow: inset 0 4px 1px #9c9c9c8a;
     display: flex;
     justify-content: center;
     height: 48px;
