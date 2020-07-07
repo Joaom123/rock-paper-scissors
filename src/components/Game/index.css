@@ -1,7 +1,7 @@
 .game {
     margin-top: 5rem;
     background-repeat: no-repeat;
-    background-size: 180px;
+    background-size: 200px;
     background-position: center;
     width: 30rem;
     height: 30rem;
@@ -20,7 +20,7 @@
 
 .game__hand--rock {
     background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    margin-left: calc((100% - 100px)/2);
+    margin-left: calc((100% - 120px)/2);
     box-shadow: inset 0 -5px 1px #A01736;
 }
 
@@ -46,3 +46,13 @@
     padding: 1.6rem;
     width: 60px;
 }
+
+/*@media screen and (min-width: 600px){*/
+/*    .game {*/
+/*        width: 50rem;*/
+/*        height: 50rem;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 992px){*/
+/*}*/

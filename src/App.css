@@ -6,3 +6,15 @@
     max-width: 1280px;
     width: 90%;
 }
+
+@media screen and (min-width: 600px){
+    .container {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .container {
+        width: 70%;
+    }
+}
