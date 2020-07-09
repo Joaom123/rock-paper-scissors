@@ -10,15 +10,15 @@ function RockPaperScissorsGame({}) {
     const handleClickOnHand = type => setSelectedHand(type);
 
     useEffect(() => {
-        if (selectedHand === "")
+        if (!handWasSelected(selectedHand))
             return ;
 
+        //TODO: Calcular vencedor
         const timer = setTimeout(() => {
             setSelectedHandByMachine("rock");
         }, 2000);
         return () => clearTimeout(timer);
 
-        //TODO: Calcular vencedor
     }, [selectedHand]);
 
     return (
@@ -29,9 +29,12 @@ function RockPaperScissorsGame({}) {
                 selectedHand={selectedHand}
                 selectedHandByMachine={selectedHandByMachine}
             />
+            {/*TODO: Mensagem de vitória ou derrota*/}
             <Rules />
         </div>
     );
 }
+
+const handWasSelected = hand => hand !== "";
 
 export default RockPaperScissorsGame;

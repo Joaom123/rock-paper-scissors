@@ -36,7 +36,7 @@ function InitialGame({onClick}) {
 
 function Hand({type, onClick = () => {}, lastInTriangle = false}) {
     if(!type)
-        return null;
+        return <HandWithoutType />;
 
     const additionalClassName = `game__hand--${type} ${lastInTriangle ? "game__hand--lastInTriangle" : ""}`;
 
@@ -52,7 +52,9 @@ function Hand({type, onClick = () => {}, lastInTriangle = false}) {
     );
 }
 
-
+function HandWithoutType() {
+    return <div className="game__hand game__hand--withoutType" />;
+}
 
 function Icon({type}) {
     if(type === "rock")

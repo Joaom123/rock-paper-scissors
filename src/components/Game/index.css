@@ -38,6 +38,10 @@
     margin: 0 auto;
 }
 
+.game__hand--withoutType {
+    background-color: #1A2946;
+}
+
 .game__handIcon {
     align-items: center;
     background: white;
