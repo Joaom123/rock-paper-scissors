@@ -7,6 +7,7 @@
     height: 30rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .game__hand {
@@ -20,19 +21,21 @@
 
 .game__hand--rock {
     background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    margin-left: calc((100% - 120px)/2);
-    box-shadow: inset 0 -5px 1px #A01736;
+    box-shadow: inset 0 -4px 2px #A01736;
 }
 
 .game__hand--paper {
     background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    box-shadow: inset 0 -5px 1px #2A46C1;
+    box-shadow: inset 0 -4px 2px #2A46C1;
 }
 
 .game__hand--scissors {
     background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    margin-left: 60px;
-    box-shadow: inset 0 -5px 1px #C76C1D;
+    box-shadow: inset 0 -4px 2px #C76C1D;
+}
+
+.game__hand--lastInTriangle {
+    margin: 0 auto;
 }
 
 .game__handIcon {
