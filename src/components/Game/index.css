@@ -10,50 +10,6 @@
     justify-content: space-between;
 }
 
-.game__hand {
-    align-items: center;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    height: 12rem;
-    width: 12rem;
-}
-
-.game__hand--rock {
-    background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-    box-shadow: inset 0 -4px 2px #A01736;
-}
-
-.game__hand--paper {
-    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-    box-shadow: inset 0 -4px 2px #2A46C1;
-}
-
-.game__hand--scissors {
-    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    box-shadow: inset 0 -4px 2px #C76C1D;
-}
-
-.game__hand--lastInTriangle {
-    margin: 0 auto;
-}
-
-.game__hand--withoutType {
-    background-color: #1A2946;
-}
-
-.game__handIcon {
-    align-items: center;
-    background: white;
-    border-radius: 50%;
-    box-shadow: inset 0 4px 1px rgba(156, 156, 156, 0.54);
-    display: flex;
-    justify-content: center;
-    height: 60px;
-    padding: 1.6rem;
-    width: 60px;
-}
-
 /*@media screen and (min-width: 600px){*/
 /*    .game {*/
 /*        width: 50rem;*/
