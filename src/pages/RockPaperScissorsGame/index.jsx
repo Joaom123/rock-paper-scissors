@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import {Game, Header, Rules} from "../../components";
 import "./index.css";
 
-function RockPaperScissorsGame({}) {
-    const [score, setScore] = useState(15);
+//Todo alterar o tipo de jogo
+function RockPaperScissorsGame({typeOfGame= "classic"}) {
+    const [score, setScore] = useState(0);
     const [selectedHand, setSelectedHand] = useState("");
     const [selectedHandByMachine, setSelectedHandByMachine] = useState("");
 
@@ -16,7 +17,7 @@ function RockPaperScissorsGame({}) {
         //Timeout para selecionar a mão da máquina
         const timer = setTimeout(() => {
             setSelectedHandByMachine("rock");
-        }, 2000);
+        }, 1000);
         return () => clearTimeout(timer);
 
     }, [selectedHand]);
