@@ -11,7 +11,7 @@ function RockPaperScissorsGame({}) {
 
     useEffect(() => {
         if (!handWasSelected(selectedHand))
-            return ;
+            return;
 
         //Timeout para selecionar a mão da máquina
         const timer = setTimeout(() => {
@@ -20,6 +20,13 @@ function RockPaperScissorsGame({}) {
         return () => clearTimeout(timer);
 
     }, [selectedHand]);
+
+    useEffect(() => {
+        if(handWasSelected(selectedHand) && handWasSelected(selectedHandByMachine))
+            return;
+
+        //TODO Lógica das comparações
+    }, [selectedHand, selectedHandByMachine]);
 
     return (
         <div className="container">
@@ -30,7 +37,7 @@ function RockPaperScissorsGame({}) {
                 selectedHandByMachine={selectedHandByMachine}
             />
             {/*TODO: Mensagem vitória/derrota/empate*/}
-            <Rules />
+            <Rules/>
         </div>
     );
 }
