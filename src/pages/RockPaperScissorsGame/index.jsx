@@ -13,7 +13,7 @@ function RockPaperScissorsGame({}) {
         if (!handWasSelected(selectedHand))
             return ;
 
-        //TODO: Calcular vencedor
+        //Timeout para selecionar a mão da máquina
         const timer = setTimeout(() => {
             setSelectedHandByMachine("rock");
         }, 2000);
@@ -29,7 +29,7 @@ function RockPaperScissorsGame({}) {
                 selectedHand={selectedHand}
                 selectedHandByMachine={selectedHandByMachine}
             />
-            {/*TODO: Mensagem de vitória ou derrota*/}
+            {/*TODO: Mensagem vitória/derrota/empate*/}
             <Rules />
         </div>
     );
