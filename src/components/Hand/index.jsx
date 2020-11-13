@@ -1,11 +1,12 @@
 import {IconPaper, IconRock, IconScissors} from "../../assets";
-import React from "react";
+import React, {Fragment} from "react";
+import "./index.css";
 
 function Hand({type, onClick = () => {}, lastInTriangle = false}) {
     if(!type)
         return <HandWithoutType />;
 
-    const additionalClassName = `game__hand--${type} ${lastInTriangle ? "game__hand--lastInTriangle" : ""}`;
+    const additionalClassName = `game__hand--${type} ${lastInTriangle ? "game__hand--lastInTriangle" : ""}`.trim();
 
     return(
         <div
@@ -30,6 +31,7 @@ function Icon({type}) {
         return <IconScissors />;
     if(type === "paper")
         return <IconPaper />
+    return <Fragment />; //Can be a fake image
 }
 
 export default Hand;
