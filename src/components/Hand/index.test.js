@@ -5,7 +5,7 @@ import Hand from "./index";
 describe('Hand', function () {
     function handWithoutType(type, lastInTriangle) {
         const root = document.createElement('div');
-        ReactDOM.render(<Hand type={type} lastInTriangle={lastInTriangle} />, root);
+        ReactDOM.render(<Hand type={type} lastInTriangle={lastInTriangle}/>, root);
 
         return root;
     }

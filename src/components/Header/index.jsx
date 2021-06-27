@@ -5,7 +5,7 @@ import {Logo} from "../../assets";
 function Header({score}) {
     return (
         <article className="header">
-            <Logo className="header__title" />
+            <Logo className="header__title"/>
             <div className="headerScore">
                 <span className="headerScore__title">SCORE</span>
                 <span className="headerScore__score">{score}</span>

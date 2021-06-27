@@ -2,42 +2,46 @@ import React, {useEffect, useState} from "react";
 import {Game, Header, Rules} from "../../components";
 import "./index.css";
 
-//Todo alterar o tipo de jogo
-function RockPaperScissorsGame({typeOfGame= "classic"}) {
+//TODO change type of game
+function RockPaperScissorsGame({typeOfGame = "classic"}) {
     const [score, setScore] = useState(0);
     const [selectedHand, setSelectedHand] = useState("");
     const [selectedHandByMachine, setSelectedHandByMachine] = useState("");
 
-    const handleClickOnHand = type => setSelectedHand(type);
+    const handleClickHand = type => setSelectedHand(type);
+
+    const handleClickPlayAgain = () => {
+        setSelectedHand("");
+        setSelectedHandByMachine("");
+    }
 
     useEffect(() => {
         if (!handWasSelected(selectedHand))
             return;
 
-        //Timeout para selecionar a mão da máquina
         const timer = setTimeout(() => {
             setSelectedHandByMachine("rock");
         }, 1000);
-        return () => clearTimeout(timer);
 
+        return () => clearTimeout(timer);
     }, [selectedHand]);
 
     useEffect(() => {
-        if(handWasSelected(selectedHand) && handWasSelected(selectedHandByMachine))
+        if (handWasSelected(selectedHand) && handWasSelected(selectedHandByMachine))
             return;
 
-        //TODO Lógica das comparações
+        //TODO Game logic goes here
     }, [selectedHand, selectedHandByMachine]);
 
     return (
         <div className="container">
             <Header score={score}/>
             <Game
-                onClick={handleClickOnHand}
+                onClickHand={handleClickHand}
+                onClickPlayAgain={handleClickPlayAgain}
                 selectedHand={selectedHand}
                 selectedHandByMachine={selectedHandByMachine}
             />
-            {/*TODO: Mensagem vitória/derrota/empate*/}
             <Rules/>
         </div>
     );
