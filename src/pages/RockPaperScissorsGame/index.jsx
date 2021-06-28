@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Game, Header, Rules} from "../../components";
 import "./index.css";
+import game from "../../service/gameLogic";
 
 //TODO change type of game
 function RockPaperScissorsGame({typeOfGame = "classic"}) {
@@ -19,18 +20,34 @@ function RockPaperScissorsGame({typeOfGame = "classic"}) {
         if (!handWasSelected(selectedHand))
             return;
 
+        //TODO: Try a ml rock-paper-scissors
         const timer = setTimeout(() => {
-            setSelectedHandByMachine("rock");
+            let handId = Math.floor(Math.random() * 3)
+
+            if (handId === 0)
+                setSelectedHandByMachine("paper")
+
+            if (handId === 1)
+                setSelectedHandByMachine("rock")
+
+            if (handId === 2)
+                setSelectedHandByMachine("scissors")
         }, 1000);
 
         return () => clearTimeout(timer);
     }, [selectedHand]);
 
     useEffect(() => {
-        if (handWasSelected(selectedHand) && handWasSelected(selectedHandByMachine))
-            return;
+        if (handWasSelected(selectedHand) && handWasSelected(selectedHandByMachine)) {
+            let result = game({playerHand: selectedHand, machineHand: selectedHandByMachine})
 
-        //TODO Game logic goes here
+            // If 1, increase score
+            if (result === 1) {
+                setScore(score + 1) //Todo: Save the score after refresh && A button to reset the score
+            }
+
+        }
+
     }, [selectedHand, selectedHandByMachine]);
 
     return (

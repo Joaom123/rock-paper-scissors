@@ -13,11 +13,11 @@ function Game({onClickHand, selectedHand, selectedHandByMachine, onClickPlayAgai
 
 function ChosenHand({selectedHand, selectedHandByMachine, onClickPlayAgain}) {
     return (
-        <section className="game">
+        <section className="game game--afterPlaying">
             <Hand type={selectedHand}/>
-            <div>
-                YOU WIN
-                <button onClick={onClickPlayAgain}>
+            <div className="game__resultAndPlayAgain">
+                <div className="game__resultMessage">IT'S A DRAW</div>
+                <button onClick={onClickPlayAgain} className="game__playAgainButton">
                     PLAY AGAIN
                 </button>
             </div>
@@ -29,7 +29,7 @@ function ChosenHand({selectedHand, selectedHandByMachine, onClickPlayAgain}) {
 function InitialGame({onClick}) {
     return (
         <section
-            className="game"
+            className="game game--initial"
             style={{backgroundImage: `url(${bgTriangle})`}}
         >
             <Hand type="paper" onClick={onClick}/>
