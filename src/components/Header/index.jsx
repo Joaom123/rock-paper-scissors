@@ -4,11 +4,11 @@ import {Logo} from "../../assets";
 
 function Header({score}) {
     return (
-        <article className="header">
-            <Logo className="header__title"/>
+        <article className="header" data-testid="header">
+            <Logo className="header__title" data-testid="header-logo"/>
             <div className="headerScore">
                 <span className="headerScore__title">SCORE</span>
-                <span className="headerScore__score">{score}</span>
+                <span className="headerScore__score" data-testid="header-score">{score}</span>
             </div>
         </article>
     );
