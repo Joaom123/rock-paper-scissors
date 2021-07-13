@@ -1,54 +1,28 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import Hand from "./index";
+import {cleanup, queryByTestId, render} from "@testing-library/react";
+
+let componentWithoutType;
+let componentRock;
 
 describe('Hand', () => {
-    function handWithoutType(type, lastInTriangle) {
-        const root = document.createElement('div');
-        ReactDOM.render(<Hand type={type} lastInTriangle={lastInTriangle}/>, root);
 
-        return root;
-    }
-
-    it('without type', () => {
-        const root = handWithoutType();
-
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--withoutType");
+    beforeEach(() => {
+        cleanup();
+        componentWithoutType = render(<Hand/>);
+        componentRock = render(<Hand type="rock"/>);
     });
 
-    it('with type rock', () => {
-        const root = handWithoutType("rock");
+    // ReactDOM.render(<Hand type={type} lastInTriangle={lastInTriangle}/>, root);
+    it('without type is rendered', () => {
+        let hand = componentWithoutType.container;
 
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--rock");
+        expect(queryByTestId(hand, 'hand-withoutType')).toBeTruthy();
     });
 
-    it('with type rock and lastInTriangle', () => {
-        const root = handWithoutType("rock", true);
+    it('with type rock is rendered', () => {
+        let hand = componentRock.container;
 
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--rock game__hand--lastInTriangle");
-    });
-
-    it('with type paper', () => {
-        const root = handWithoutType("paper");
-
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--paper");
-    });
-
-    it('with type paper and lastInTriangle', () => {
-        const root = handWithoutType("paper", true);
-
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--paper game__hand--lastInTriangle");
-    });
-
-    it('with type scissors', () => {
-        const root = handWithoutType("scissors");
-
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--scissors");
-    });
-
-    it('with type scissors and lastInTriangle', () => {
-        const root = handWithoutType("scissors", true);
-
-        expect(root.querySelector("div").className).toBe("game__hand game__hand--scissors game__hand--lastInTriangle");
+        expect(queryByTestId(hand, 'hand-withType')).toBeTruthy();
     });
 });

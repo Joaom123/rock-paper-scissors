@@ -16,6 +16,7 @@ function Hand({
         <div
             className={`game__hand ${additionalClassName}`}
             onClick={() => onClick(type)}
+            data-testid="hand-withType"
         >
             <div className={`game__handIcon game__handIcon--${type}`}>
                 <Icon type={type}/>
@@ -25,7 +26,7 @@ function Hand({
 }
 
 function HandWithoutType() {
-    return <div className="game__hand game__hand--withoutType"/>;
+    return <div className="game__hand game__hand--withoutType" data-testid="hand-withoutType"/>;
 }
 
 function Icon({type}) {

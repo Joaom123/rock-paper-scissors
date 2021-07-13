@@ -13,7 +13,6 @@ describe("Header", () => {
 
     it('should render correctly with Logo and Score', () => {
         let header = component.container;
-        // console.log(queryByTestId(header, 'header-logo'))
 
         expect(queryByTestId(header, 'header')).toBeTruthy();
         expect(queryByTestId(header, 'header-logo')).toHaveTextContent('logo.svg') // test if svg was called
