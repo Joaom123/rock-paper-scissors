@@ -20,8 +20,12 @@ Your users should be able to:
 
 ### Tools used
 
-- ReactJS
+- React
 - Javascript
+- React Testing Library & Jest
+- Prettier
+- Eslint
+- Husky
 
 ### Rules
 
