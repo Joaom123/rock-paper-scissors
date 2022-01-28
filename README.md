@@ -2,7 +2,7 @@
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
-Website in Production: https://rock-paper-scissors-lizard-spock-1.netlify.app/
+Demo: https://rock-paper-scissors-lizard-spock-1.netlify.app/
 
 ### The challenge
 
