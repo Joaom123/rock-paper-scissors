@@ -15,12 +15,7 @@ function ChosenHand({selectedHand, selectedHandByMachine, onClickPlayAgain}) {
     return (
         <section className="game game--afterPlaying">
             <Hand type={selectedHand}/>
-            <div className="game__resultAndPlayAgain">
-                <div className="game__resultMessage">IT'S A DRAW</div>
-                <button onClick={onClickPlayAgain} className="game__playAgainButton">
-                    PLAY AGAIN
-                </button>
-            </div>
+            <ResultAndPlayAgain onClickPlayAgain={onClickPlayAgain}/>
             <Hand type={selectedHandByMachine}/>
         </section>
     );
@@ -31,11 +26,21 @@ function InitialGame({onClick}) {
         <section
             className="game game--initial"
             style={{backgroundImage: `url(${bgTriangle})`}}
+            data-testid="game-initial"
         >
             <Hand type="paper" onClick={onClick}/>
             <Hand type="scissors" onClick={onClick}/>
             <Hand type="rock" onClick={onClick} lastInTriangle/>
         </section>
+    );
+}
+
+function ResultAndPlayAgain(onClickPlayAgain) {
+    return (
+        <div className="game__resultAndPlayAgain">
+            <div className="game__resultMessage">IT'S A DRAW</div>
+            <button onClick={onClickPlayAgain} className="game__playAgainButton">PLAY AGAIN</button>
+        </div>
     );
 }
 
