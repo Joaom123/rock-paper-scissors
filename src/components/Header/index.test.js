@@ -2,9 +2,8 @@ import React from "react";
 import Header from "./index";
 import {cleanup, queryByTestId, render} from "@testing-library/react";
 
-let component;
-
 describe("Header", () => {
+    let component;
 
     beforeEach(() => {
         cleanup();
@@ -13,10 +12,17 @@ describe("Header", () => {
 
     it('should render correctly with Logo and Score', () => {
         let header = component.container;
-
         expect(queryByTestId(header, 'header')).toBeTruthy();
-        expect(queryByTestId(header, 'header-logo')).toHaveTextContent('logo.svg') // test if svg was called
-        expect(queryByTestId(header, 'header-score')).toHaveTextContent(0);
 
+    });
+
+    it('should render logo', function () {
+        let header = component.container;
+        expect(queryByTestId(header, 'header-logo')).toHaveTextContent('logo.svg')
+    });
+
+    it('should have initial score equals zero', function () {
+        let header = component.container;
+        expect(queryByTestId(header, 'header-score')).toHaveTextContent('0');
     });
 });
