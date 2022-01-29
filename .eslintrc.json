@@ -23,7 +23,7 @@
         "react",
         "prettier"
     ],
-    "ignorePatterns": [ "*.test.js", "*.test.tsx" ],
+    "ignorePatterns": [ "*.test.js", "*.test.tsx", "src/*.js" ],
     "rules": {
         "react/jsx-filename-extension": [ 1, { "extensions": [".js", ".jsx"] }],
         "react/react-in-jsx-scope": "off"
