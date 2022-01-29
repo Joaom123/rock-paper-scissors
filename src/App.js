@@ -1,9 +1,9 @@
-import React from 'react';
-import './App.css';
-import RockPaperScissorsGame from './pages/RockPaperScissorsGame';
+import React from 'react'
+import './App.css'
+import RockPaperScissorsGame from './pages/RockPaperScissorsGame'
 
 function App() {
-	return <RockPaperScissorsGame />;
+	return <RockPaperScissorsGame />
 }
 
-export default App;
+export default App

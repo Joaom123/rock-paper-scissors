@@ -3,7 +3,7 @@
 // tied -> 0
 // lost -> -1
 function game({ playerHand, machineHand }) {
-  return 1;
+	return 1
 }
 
-export default game;
+export default game

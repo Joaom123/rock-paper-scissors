@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 function Rules({}) {
-    return (
-        <section className="rules">
-
-        </section>
-    );
+	return <section className="rules"></section>
 }
 
-export default Rules;
+export default Rules
