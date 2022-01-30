@@ -17,7 +17,8 @@
     "format": "npx prettier --write src/**/*.{js,jsx,css}",
     "format-check": "npx prettier --check src/**/*.{js,jsx,css}",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "coverage": "npm test -- --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
