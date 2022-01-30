@@ -26,7 +26,7 @@ describe('Hand', () => {
 	it('should render hand type rock', () => {
 		render(<Hand type="rock" />)
 
-		expect(screen.getByTestId('hand-withType')).toBeTruthy()
+		expect(screen.getByTestId('hand-type-rock')).toBeTruthy()
 	})
 
 	it('should render hand type rock with class', () => {
@@ -37,7 +37,7 @@ describe('Hand', () => {
 
 	it('should render SVG if hand has type rock', () => {
 		render(<Hand type="rock" />)
-		const svgWrapper = screen.getByTestId('hand-icon')
+		const svgWrapper = screen.getByTestId('hand-icon-rock')
 
 		expect(svgWrapper.firstChild).toHaveTextContent('icon-rock.svg')
 	})
@@ -46,7 +46,7 @@ describe('Hand', () => {
 		const handleClick = jest.fn()
 		render(<Hand type="rock" onClick={handleClick} />)
 
-		fireEvent.click(screen.getByTestId('hand-withType'))
+		fireEvent.click(screen.getByTestId('hand-type-rock'))
 
 		expect(handleClick).toHaveBeenCalledTimes(1)
 		expect(handleClick).toHaveBeenCalledWith('rock')
@@ -55,12 +55,12 @@ describe('Hand', () => {
 	it('should render hand type paper', () => {
 		render(<Hand type="paper" />)
 
-		expect(screen.getByTestId('hand-withType')).toBeTruthy()
+		expect(screen.getByTestId('hand-type-paper')).toBeTruthy()
 	})
 
 	it('should render SVG if hand has type paper', () => {
 		render(<Hand type="paper" />)
-		const svgWrapper = screen.getByTestId('hand-icon')
+		const svgWrapper = screen.getByTestId('hand-icon-paper')
 
 		expect(svgWrapper.firstChild).toHaveTextContent('icon-paper.svg')
 	})
@@ -75,7 +75,7 @@ describe('Hand', () => {
 		const handleClick = jest.fn()
 		render(<Hand type="paper" onClick={handleClick} />)
 
-		fireEvent.click(screen.getByTestId('hand-withType'))
+		fireEvent.click(screen.getByTestId('hand-type-paper'))
 
 		expect(handleClick).toHaveBeenCalledTimes(1)
 		expect(handleClick).toHaveBeenCalledWith('paper')
@@ -84,12 +84,12 @@ describe('Hand', () => {
 	it('should render hand type scissors', () => {
 		render(<Hand type="scissors" />)
 
-		expect(screen.getByTestId('hand-withType')).toBeTruthy()
+		expect(screen.getByTestId('hand-type-scissors')).toBeTruthy()
 	})
 
 	it('should render SVG if hand has type scissors', () => {
 		render(<Hand type="scissors" />)
-		const svgWrapper = screen.getByTestId('hand-icon')
+		const svgWrapper = screen.getByTestId('hand-icon-scissors')
 
 		expect(svgWrapper.firstChild).toHaveTextContent('icon-scissors.svg')
 	})
@@ -104,7 +104,7 @@ describe('Hand', () => {
 		const handleClick = jest.fn()
 		render(<Hand type="scissors" onClick={handleClick} />)
 
-		fireEvent.click(screen.getByTestId('hand-withType'))
+		fireEvent.click(screen.getByTestId('hand-type-scissors'))
 
 		expect(handleClick).toHaveBeenCalledTimes(1)
 		expect(handleClick).toHaveBeenCalledWith('scissors')

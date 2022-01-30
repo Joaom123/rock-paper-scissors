@@ -13,11 +13,11 @@ function Hand({ type, onClick = () => {}, lastInTriangle = false }) {
 		<div
 			className={`game__hand ${additionalClassName}`}
 			onClick={() => onClick(type)}
-			data-testid="hand-withType"
+			data-testid={`hand-type-${type}`}
 		>
 			<div
 				className={`game__handIcon game__handIcon--${type}`}
-				data-testid="hand-icon"
+				data-testid={`hand-icon-${type}`}
 			>
 				<Icon type={type} />
 			</div>
