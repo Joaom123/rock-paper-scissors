@@ -1,8 +1,10 @@
+import { RESULT_ENUM } from '../constants'
+
 export default function getResultMessage(result) {
 	const resultMessage = {
-		1: 'YOU WIN',
-		0: "IT'S A DRAW",
-		'-1': 'YOU LOSE',
+		[RESULT_ENUM.WIN]: 'YOU WIN',
+		[RESULT_ENUM.DRAW]: "IT'S A DRAW",
+		[RESULT_ENUM.LOSE]: 'YOU LOSE',
 	}
 
 	return resultMessage[result]

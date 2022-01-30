@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Game, Header, Rules } from '../../components'
 import './index.css'
-import game from '../../service/gameLogic'
+import { play } from '../../services'
+import { RESULT_ENUM } from '../../constants'
 
 //TODO change type of game
 function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 	const [score, setScore] = useState(0)
+	const [result, setResult] = useState(0)
 	const [selectedHand, setSelectedHand] = useState('')
 	const [selectedHandByMachine, setSelectedHandByMachine] = useState('')
 
@@ -17,38 +19,20 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 	}
 
 	useEffect(() => {
-		if (!handWasSelected(selectedHand)) return
+		if (handWasSelected(selectedHand)) {
+			const { result, handSelectedByMachine } = play(selectedHand)
+			setSelectedHandByMachine(handSelectedByMachine)
+			setResult(result)
 
-		//TODO: Try a ml rock-paper-scissors
-		const timer = setTimeout(() => {
-			let handId = Math.floor(Math.random() * 3)
+			if (result === RESULT_ENUM.WIN) {
+				setScore(score + 1)
+			}
 
-			if (handId === 0) setSelectedHandByMachine('paper')
-
-			if (handId === 1) setSelectedHandByMachine('rock')
-
-			if (handId === 2) setSelectedHandByMachine('scissors')
-		}, 1000)
-
-		return () => clearTimeout(timer)
-	}, [selectedHand])
-
-	useEffect(() => {
-		if (
-			handWasSelected(selectedHand) &&
-			handWasSelected(selectedHandByMachine)
-		) {
-			let result = game({
-				playerHand: selectedHand,
-				machineHand: selectedHandByMachine,
-			})
-
-			// If 1, increase score
-			if (result === 1) {
-				setScore(score + 1) //Todo: Save the score after refresh && A button to reset the score
+			if (result === RESULT_ENUM.LOSE) {
+				setScore(score - 1)
 			}
 		}
-	}, [selectedHand, selectedHandByMachine])
+	}, [selectedHand])
 
 	return (
 		<div className="container" data-testid="classic-game">
@@ -58,6 +42,7 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 				onClickPlayAgain={handleClickPlayAgain}
 				selectedHand={selectedHand}
 				selectedHandByMachine={selectedHandByMachine}
+				result={result}
 			/>
 			<Rules />
 		</div>
