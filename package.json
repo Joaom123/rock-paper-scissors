@@ -15,6 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "format": "npx prettier --write src/**/*.{js,jsx,css}",
+    "format-check": "npx prettier --check src/**/*.{js,jsx,css}",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
