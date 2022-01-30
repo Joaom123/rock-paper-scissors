@@ -2,12 +2,14 @@ import React from 'react'
 import './index.css'
 import bgTriangle from '../../assets/img/bg-triangle.svg'
 import { Hand } from '../index'
+import { getResultMessage } from '../../util'
 
 function Game({
 	onClickHand,
 	selectedHand,
 	selectedHandByMachine,
 	onClickPlayAgain,
+	result = 0,
 }) {
 	if (selectedHand)
 		return (
@@ -15,27 +17,39 @@ function Game({
 				selectedHand={selectedHand}
 				selectedHandByMachine={selectedHandByMachine}
 				onClickPlayAgain={onClickPlayAgain}
+				result={result}
 			/>
 		)
 
 	return <InitialGame onClick={onClickHand} />
 }
 
-function ChosenHand({ selectedHand, selectedHandByMachine, onClickPlayAgain }) {
+function ChosenHand({
+	selectedHand,
+	selectedHandByMachine,
+	onClickPlayAgain,
+	result,
+}) {
 	return (
 		<section className="game game--afterPlaying">
 			<Hand type={selectedHand} />
-			<ResultAndPlayAgain onClickPlayAgain={onClickPlayAgain} />
+			<ResultAndPlayAgain onClickPlayAgain={onClickPlayAgain} result={result} />
 			<Hand type={selectedHandByMachine} />
 		</section>
 	)
 }
 
-function ResultAndPlayAgain(onClickPlayAgain) {
+function ResultAndPlayAgain({ onClickPlayAgain, result }) {
 	return (
 		<div className="game__resultAndPlayAgain">
-			<div className="game__resultMessage">IT'S A DRAW</div>
-			<button onClick={onClickPlayAgain} className="game__playAgainButton">
+			<div className="game__resultMessage" data-testid="result-message">
+				{getResultMessage(result)}
+			</div>
+			<button
+				onClick={() => onClickPlayAgain()}
+				className="game__playAgainButton"
+				data-testid="play-again-button"
+			>
 				PLAY AGAIN
 			</button>
 		</div>

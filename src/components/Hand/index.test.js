@@ -23,6 +23,12 @@ describe('Hand', () => {
 		expect(screen.queryByTestId('hand-withType')).toBeNull()
 	})
 
+	it('should have class if is lastInTriangle', () => {
+		const { container } = render(<Hand type="rock" lastInTriangle />)
+
+		expect(container.firstChild).toHaveClass('game__hand--lastInTriangle')
+	})
+
 	it('should render hand type rock', () => {
 		render(<Hand type="rock" />)
 
