@@ -2,7 +2,7 @@ import React from 'react'
 import './index.css'
 import bgTriangle from '../../assets/img/bg-triangle.svg'
 import { Hand } from '../index'
-import { getResultMessage } from '../../util'
+import { getResultMessage } from '../../utils'
 
 function Game({
 	onClickHand,
