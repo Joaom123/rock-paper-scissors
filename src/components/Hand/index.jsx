@@ -1,5 +1,5 @@
 import { IconPaper, IconRock, IconScissors } from '../../assets'
-import React, { Fragment } from 'react'
+import React from 'react'
 import './index.css'
 
 function Hand({ type, onClick = () => {}, lastInTriangle = false }) {
@@ -15,7 +15,10 @@ function Hand({ type, onClick = () => {}, lastInTriangle = false }) {
 			onClick={() => onClick(type)}
 			data-testid="hand-withType"
 		>
-			<div className={`game__handIcon game__handIcon--${type}`}>
+			<div
+				className={`game__handIcon game__handIcon--${type}`}
+				data-testid="hand-icon"
+			>
 				<Icon type={type} />
 			</div>
 		</div>
@@ -32,10 +35,13 @@ function HandWithoutType() {
 }
 
 function Icon({ type }) {
-	if (type === 'rock') return <IconRock />
-	if (type === 'scissors') return <IconScissors />
-	if (type === 'paper') return <IconPaper />
-	return <Fragment />
+	const icon = {
+		rock: <IconRock />,
+		scissors: <IconScissors />,
+		paper: <IconPaper />,
+	}
+
+	return icon[type]
 }
 
 export default Hand
