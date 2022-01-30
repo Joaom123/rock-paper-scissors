@@ -1,8 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render, screen } from '@testing-library/react'
+import App from './App'
 
-describe('App', function () {
-	it('1', () => {
-		expect(1)
+describe('App', () => {
+	it('should be rendered', () => {
+		render(<App />)
+
+		expect(screen.getByTestId('classic-game')).toBeTruthy()
 	})
 })

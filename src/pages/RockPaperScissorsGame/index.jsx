@@ -51,7 +51,7 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 	}, [selectedHand, selectedHandByMachine])
 
 	return (
-		<div className="container">
+		<div className="container" data-testid="classic-game">
 			<Header score={score} />
 			<Game
 				onClickHand={handleClickHand}
