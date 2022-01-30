@@ -1,20 +1,10 @@
 import React from 'react'
-import { cleanup, queryByTestId, render } from '@testing-library/react'
 import Game from './index'
-
-let component
+import { render, screen } from '@testing-library/react'
 
 describe('Game', () => {
-	beforeEach(() => {
-		cleanup()
-		component = render(<Game />)
+	it('should render initial game', () => {
+		render(<Game />)
+		expect(screen.getByTestId('initial-game')).toBeTruthy()
 	})
-
-	it('Initial game is rendered', () => {
-		let container = component.container
-
-		expect(queryByTestId(container, 'game-initial')).toBeTruthy()
-	})
-
-	it('should click on Hand', () => {})
 })

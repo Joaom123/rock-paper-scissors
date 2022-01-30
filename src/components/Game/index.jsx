@@ -36,7 +36,7 @@ function InitialGame({ onClick }) {
 		<section
 			className="game game--initial"
 			style={{ backgroundImage: `url(${bgTriangle})` }}
-			data-testid="game-initial"
+			data-testid="initial-game"
 		>
 			<Hand type="paper" onClick={onClick} />
 			<Hand type="scissors" onClick={onClick} />
