@@ -31,6 +31,17 @@ function ChosenHand({ selectedHand, selectedHandByMachine, onClickPlayAgain }) {
 	)
 }
 
+function ResultAndPlayAgain(onClickPlayAgain) {
+	return (
+		<div className="game__resultAndPlayAgain">
+			<div className="game__resultMessage">IT'S A DRAW</div>
+			<button onClick={onClickPlayAgain} className="game__playAgainButton">
+				PLAY AGAIN
+			</button>
+		</div>
+	)
+}
+
 function InitialGame({ onClick }) {
 	return (
 		<section
@@ -42,17 +53,6 @@ function InitialGame({ onClick }) {
 			<Hand type="scissors" onClick={onClick} />
 			<Hand type="rock" onClick={onClick} lastInTriangle />
 		</section>
-	)
-}
-
-function ResultAndPlayAgain(onClickPlayAgain) {
-	return (
-		<div className="game__resultAndPlayAgain">
-			<div className="game__resultMessage">IT'S A DRAW</div>
-			<button onClick={onClickPlayAgain} className="game__playAgainButton">
-				PLAY AGAIN
-			</button>
-		</div>
 	)
 }
 
