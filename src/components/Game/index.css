@@ -1,14 +1,13 @@
 .game {
 	margin-top: 5rem;
 	display: flex;
-	height: 30rem;
 }
 
 .game--initial {
 	background-repeat: no-repeat;
 	background-size: 200px;
 	background-position: center;
-	width: 30rem;
+	width: 540px;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }

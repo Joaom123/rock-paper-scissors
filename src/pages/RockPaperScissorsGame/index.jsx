@@ -4,7 +4,6 @@ import './index.css'
 import { play } from '../../services'
 import { RESULT_ENUM } from '../../constants'
 
-//TODO change type of game
 function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 	const [score, setScore] = useState(0)
 	const [result, setResult] = useState(0)

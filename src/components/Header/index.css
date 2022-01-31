@@ -1,33 +1,36 @@
 .header {
+	align-items: center;
 	border: 2px solid hsl(217, 16%, 45%);
 	border-radius: 0.7rem;
 	display: flex;
 	justify-content: space-between;
+	height: 155px;
+	margin-top: 3em;
+	max-width: 700px;
 	width: 100%;
-	margin-top: 2.2rem;
-	max-width: 50rem;
 }
 
 .header__title {
-	width: 100px;
 	margin-left: 2rem;
 }
 
 .headerScore {
 	align-items: center;
 	background-color: white;
-	border-radius: 0.7rem;
+	border-radius: 0.7em;
 	display: flex;
 	flex-direction: column;
-	padding: 0.7rem 2rem;
-	margin: 1rem 1rem 1rem 0;
+	justify-content: center;
+	margin-right: 1.5em;
+	height: 115px;
+	width: 150px;
 }
 
 .headerScore__title {
 	color: hsl(229, 64%, 46%);
-	font-size: 1.2rem;
+	font-size: 2em;
 }
 
 .headerScore__score {
-	font-size: 4rem;
+	font-size: 6em;
 }
