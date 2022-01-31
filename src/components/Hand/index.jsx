@@ -2,12 +2,17 @@ import { IconPaper, IconRock, IconScissors } from '../../assets'
 import React from 'react'
 import './index.css'
 
-function Hand({ type, onClick = () => {}, lastInTriangle = false }) {
+function Hand({
+	type,
+	onClick = () => {},
+	lastInTriangle = false,
+	selected = false,
+}) {
 	if (!type) return <HandWithoutType />
 
 	const additionalClassName = `game__hand--${type} ${
 		lastInTriangle ? 'game__hand--lastInTriangle' : ''
-	}`.trim()
+	} ${selected ? 'game__hand--selected' : ''}`.trim()
 
 	return (
 		<div
@@ -16,10 +21,19 @@ function Hand({ type, onClick = () => {}, lastInTriangle = false }) {
 			data-testid={`hand-type-${type}`}
 		>
 			<div
-				className={`game__handIcon game__handIcon--${type}`}
+				className={`game__handIcon game__handIcon--${type} ${
+					selected ? 'game__handIcon--selected' : ''
+				}`}
 				data-testid={`hand-icon-${type}`}
 			>
-				<Icon type={type} />
+				<div
+					style={{
+						height: `${selected ? '110px' : '80px'}`,
+						width: `${selected ? '110px' : '80px'}`,
+					}}
+				>
+					<Icon type={type} />
+				</div>
 			</div>
 		</div>
 	)

@@ -27,6 +27,12 @@
 	margin: 0 auto;
 }
 
+.game__hand--selected {
+	height: 300px;
+	width: 300px;
+	cursor: default;
+}
+
 .game__hand--withoutType {
 	background-color: #1a2946;
 }
@@ -41,4 +47,9 @@
 	height: 120px;
 	padding: 1.6rem;
 	width: 120px;
+}
+
+.game__handIcon--selected {
+	height: 200px;
+	width: 200px;
 }
