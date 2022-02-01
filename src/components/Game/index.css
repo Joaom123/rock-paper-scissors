@@ -63,6 +63,12 @@
 	margin-bottom: 1em;
 }
 
+@media screen and (max-width: 940px) {
+	.game__handText {
+		font-size: 1.5em;
+	}
+}
+
 @media screen and (max-width: 660px) {
 	.game--initial {
 		max-width: 290px;
@@ -75,6 +81,7 @@
 
 	.game--afterPlaying {
 		justify-content: space-around;
+		max-width: 500px;
 	}
 
 	.game__resultAndPlayAgain {
