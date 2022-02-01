@@ -32,9 +32,15 @@ function ChosenHand({
 }) {
 	return (
 		<section className="game game--afterPlaying">
-			<Hand type={selectedHand} selected />
+			<div className="game__handAndHandText">
+				<Hand type={selectedHand} selected />
+				<span className="game__handText">YOU PICKED</span>
+			</div>
 			<ResultAndPlayAgain onClickPlayAgain={onClickPlayAgain} result={result} />
-			<Hand type={selectedHandByMachine} selected />
+			<div className="game__handAndHandText">
+				<Hand type={selectedHandByMachine} selected />
+				<span className="game__handText">THE HOUSE PICKED</span>
+			</div>
 		</section>
 	)
 }

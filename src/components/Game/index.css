@@ -5,9 +5,10 @@
 
 .game--initial {
 	background-repeat: no-repeat;
-	background-size: 200px;
+	background-size: 250px;
 	background-position: center;
-	width: 540px;
+	width: 100%;
+	max-width: 540px;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
@@ -20,7 +21,7 @@
 }
 
 .game__resultAndPlayAgain {
-	order: 3;
+	order: 0;
 	width: 240px;
 	display: flex;
 	flex-direction: column;
@@ -49,15 +50,44 @@
 	color: hsl(349, 71%, 52%);
 }
 
-@media screen and (min-width: 600px) {
-	.game--afterPlaying {
-		/*width: 75%;*/
+.game__handAndHandText {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+}
+
+.game__handText {
+	color: white;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+	.game--initial {
+		max-width: 290px;
+		background-size: 125px;
 	}
 
 	.game__resultAndPlayAgain {
-		order: 0;
+		order: 3;
+	}
+
+	.game--afterPlaying {
+		justify-content: space-around;
+	}
+
+	.game__resultAndPlayAgain {
+		margin-top: 5em;
+	}
+
+	.game__handAndHandText {
+		flex-direction: column;
+	}
+
+	.game__handText {
+		font-size: 2em;
+		margin-bottom: 0;
+		margin-top: 1em;
 	}
 }
-
-/*@media screen and (min-width: 992px){*/
-/*}*/

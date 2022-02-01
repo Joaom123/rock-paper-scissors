@@ -34,3 +34,28 @@
 .headerScore__score {
 	font-size: 6em;
 }
+
+@media screen and (max-width: 600px) {
+	.header {
+		width: 312px;
+		height: 97px;
+	}
+
+	.header__title {
+		width: 80px;
+		height: 46px;
+	}
+
+	.headerScore {
+		height: 72px;
+		width: 80px;
+	}
+
+	.headerScore__title {
+		font-size: 1.5em;
+	}
+
+	.headerScore__score {
+		font-size: 3em;
+	}
+}

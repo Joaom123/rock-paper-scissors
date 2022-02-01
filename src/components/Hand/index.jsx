@@ -27,10 +27,9 @@ function Hand({
 				data-testid={`hand-icon-${type}`}
 			>
 				<div
-					style={{
-						height: `${selected ? '110px' : '80px'}`,
-						width: `${selected ? '110px' : '80px'}`,
-					}}
+					className={`${
+						selected ? 'handIcon__icon--selected' : 'handIcon__icon'
+					}`}
 				>
 					<Icon type={type} />
 				</div>

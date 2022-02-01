@@ -53,3 +53,57 @@
 	height: 200px;
 	width: 200px;
 }
+
+.handIcon__icon {
+	height: 80px;
+	width: 80px;
+}
+
+.handIcon__icon--selected {
+	height: 110px;
+	width: 110px;
+}
+
+@media screen and (max-width: 940px) {
+	.game__hand--selected {
+		height: 200px;
+		width: 200px;
+	}
+
+	.game__handIcon--selected {
+		height: 120px;
+		width: 120px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.game__hand {
+		height: 100px;
+		width: 100px;
+	}
+
+	.game__hand--selected {
+		height: 130px;
+		width: 130px;
+	}
+
+	.game__handIcon {
+		height: 50px;
+		width: 50px;
+	}
+
+	.game__handIcon--selected {
+		height: 70px;
+		width: 70px;
+	}
+
+	.handIcon__icon {
+		height: 40px;
+		width: 40px;
+	}
+
+	.handIcon__icon--selected {
+		height: 50px;
+		width: 50px;
+	}
+}

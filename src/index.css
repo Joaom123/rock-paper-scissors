@@ -1,6 +1,7 @@
 html {
 	height: 100vh;
 	font-size: 10px;
+	--medium-size: 940px;
 }
 
 @font-face {
