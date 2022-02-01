@@ -57,7 +57,7 @@ const handWasSelected = (hand) => hand !== ''
 const getScoreFromLocalStorage = () => {
 	let storedValue = localStorage.getItem('score')
 
-	if (!storedValue) return null
+	if (!storedValue) return 0
 
 	return Number(storedValue)
 }
