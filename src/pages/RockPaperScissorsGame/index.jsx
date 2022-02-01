@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Game, Header, Rules } from '../../components'
 import './index.css'
-import { RESULT_ENUM } from '../../constants'
+import { HAND_ENUM, RESULT_ENUM } from '../../constants'
 import { play } from '../../utils'
 
 function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
@@ -21,8 +21,12 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 
 	useEffect(() => {
 		if (handWasSelected(selectedHand)) {
-			const { result, handSelectedByMachine } = play(selectedHand)
-			setSelectedHandByMachine(handSelectedByMachine)
+			const handIndex = Math.floor(Math.random() * 3)
+			const hands = [HAND_ENUM.ROCK, HAND_ENUM.SCISSORS, HAND_ENUM.PAPER]
+			const machineHand = hands[handIndex]
+			const result = play(selectedHand, machineHand)
+
+			setSelectedHandByMachine(machineHand)
 			setResult(result)
 
 			if (result === RESULT_ENUM.WIN) {

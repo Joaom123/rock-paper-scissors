@@ -1,10 +1,6 @@
 import { HAND_ENUM, RESULT_ENUM } from '../constants'
 
-export default function play(playerHand) {
-	const handIndex = Math.floor(Math.random() * 3)
-	const hands = [HAND_ENUM.ROCK, HAND_ENUM.SCISSORS, HAND_ENUM.PAPER]
-	const handSelectedByMachine = hands[handIndex]
-
+export default function play(playerHand, machineHand) {
 	let result
 
 	if (playerHand === HAND_ENUM.ROCK) {
@@ -13,7 +9,7 @@ export default function play(playerHand) {
 			[HAND_ENUM.SCISSORS]: RESULT_ENUM.WIN,
 			[HAND_ENUM.PAPER]: RESULT_ENUM.LOSE,
 		}
-		result = handsOptions[handSelectedByMachine]
+		result = handsOptions[machineHand]
 	}
 
 	if (playerHand === HAND_ENUM.SCISSORS) {
@@ -22,7 +18,7 @@ export default function play(playerHand) {
 			[HAND_ENUM.SCISSORS]: RESULT_ENUM.DRAW,
 			[HAND_ENUM.PAPER]: RESULT_ENUM.WIN,
 		}
-		result = handsOptions[handSelectedByMachine]
+		result = handsOptions[machineHand]
 	}
 
 	if (playerHand === HAND_ENUM.PAPER) {
@@ -31,8 +27,8 @@ export default function play(playerHand) {
 			[HAND_ENUM.SCISSORS]: RESULT_ENUM.LOSE,
 			[HAND_ENUM.PAPER]: RESULT_ENUM.DRAW,
 		}
-		result = handsOptions[handSelectedByMachine]
+		result = handsOptions[machineHand]
 	}
 
-	return { handSelectedByMachine, result }
+	return result
 }
