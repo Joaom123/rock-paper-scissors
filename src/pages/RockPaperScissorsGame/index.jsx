@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Game, Header, Rules } from '../../components'
 import './index.css'
-import { play } from '../../services'
 import { RESULT_ENUM } from '../../constants'
+import { play } from '../../utils'
 
 function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 	const [score, setScore] = useState(0)
