@@ -66,17 +66,22 @@
 
 @media screen and (max-width: 940px) {
 	.game__hand--selected {
-		height: 200px;
-		width: 200px;
+		height: 150px;
+		width: 150px;
 	}
 
 	.game__handIcon--selected {
-		height: 120px;
-		width: 120px;
+		height: 80px;
+		width: 80px;
+	}
+
+	.handIcon__icon--selected {
+		height: 50px;
+		width: 50px;
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
 	.game__hand {
 		height: 100px;
 		width: 100px;
