@@ -17,6 +17,8 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 		setSelectedHandByMachine('')
 	}
 
+	useEffect(() => setScore(getScoreFromLocalStorage()))
+
 	useEffect(() => {
 		if (handWasSelected(selectedHand)) {
 			const { result, handSelectedByMachine } = play(selectedHand)
@@ -25,10 +27,12 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 
 			if (result === RESULT_ENUM.WIN) {
 				setScore(score + 1)
+				setScoreIntoLocalStorage(score + 1)
 			}
 
 			if (result === RESULT_ENUM.LOSE) {
 				setScore(score - 1)
+				setScoreIntoLocalStorage(score - 1)
 			}
 		}
 	}, [selectedHand])
@@ -49,5 +53,15 @@ function RockPaperScissorsGame({ typeOfGame = 'classic' }) {
 }
 
 const handWasSelected = (hand) => hand !== ''
+
+const getScoreFromLocalStorage = () => {
+	let storedValue = localStorage.getItem('score')
+
+	if (!storedValue) return null
+
+	return Number(storedValue)
+}
+
+const setScoreIntoLocalStorage = (score) => localStorage.setItem('score', score)
 
 export default RockPaperScissorsGame
